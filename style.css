@@ -270,3 +270,406 @@
   .timeline-v2 .tl-card .place { font-size: .8rem; }
 }
 
+/* ═══════════════════════════════
+   OFFICIAL TYPOGRAPHY SYSTEM
+═══════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,300;1,8..60,400&family=Noto+Serif+Bengali:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Font Families ── */
+  --font-display:  'EB Garamond', 'Times New Roman', serif;
+  --font-body:     'Source Serif 4', Georgia, serif;
+  --font-bengali:  'Noto Serif Bengali', serif;
+  --font-mono:     'Courier New', Courier, monospace;
+
+  /* ── Font Sizes (fluid) ── */
+  --fs-hero:    clamp(2.2rem,  5vw,  4.2rem);
+  --fs-h1:      clamp(1.8rem,  3.5vw, 3rem);
+  --fs-h2:      clamp(1.4rem,  2.5vw, 2.2rem);
+  --fs-h3:      clamp(1.1rem,  1.8vw, 1.5rem);
+  --fs-h4:      clamp(1rem,    1.4vw, 1.2rem);
+  --fs-body:    clamp(.9rem,   1.2vw, 1rem);
+  --fs-sm:      clamp(.78rem,  1vw,   .88rem);
+  --fs-xs:      clamp(.68rem,  .85vw, .75rem);
+  --fs-label:   .65rem;
+
+  /* ── Line Heights ── */
+  --lh-tight:   1.15;
+  --lh-heading: 1.28;
+  --lh-body:    1.82;
+  --lh-relaxed: 2;
+
+  /* ── Letter Spacing ── */
+  --ls-tight:   -.02em;
+  --ls-normal:  .01em;
+  --ls-wide:    .08em;
+  --ls-wider:   .14em;
+  --ls-label:   .2em;
+}
+
+
+/* ═══════════════════════════════
+   BASE RESET
+═══════════════════════════════ */
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-normal);
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* ═══════════════════════════════
+   HEADINGS
+═══════════════════════════════ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-tight);
+  color: var(--tx-primary);
+}
+
+h1 { font-size: var(--fs-h1); font-weight: 700; }
+h2 { font-size: var(--fs-h2); font-weight: 600; }
+h3 { font-size: var(--fs-h3); font-weight: 600; }
+h4 { font-size: var(--fs-h4); font-weight: 500; }
+h5 { font-size: var(--fs-sm); font-weight: 500; text-transform: uppercase; letter-spacing: var(--ls-wider); }
+h6 { font-size: var(--fs-xs); font-weight: 500; text-transform: uppercase; letter-spacing: var(--ls-label); }
+
+p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--tx-secondary);
+  margin-bottom: .75em;
+}
+
+p:last-child { margin-bottom: 0; }
+
+
+/* ═══════════════════════════════
+   HERO SECTION TYPOGRAPHY
+═══════════════════════════════ */
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: -.03em;
+  color: #ffffff;
+}
+
+.hero-name strong {
+  font-weight: 800;
+  font-style: italic;
+  color: #f5d08a;
+}
+
+.hero-title {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  line-height: var(--lh-heading);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.hero-desc {
+  font-family: var(--font-body);
+  font-size: clamp(.9rem, 1.4vw, 1.02rem);
+  font-weight: 400;
+  line-height: var(--lh-relaxed);
+  color: rgba(255,255,255,.8);
+}
+
+
+/* ═══════════════════════════════
+   SECTION TYPOGRAPHY
+═══════════════════════════════ */
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: var(--lh-heading);
+  letter-spacing: -.015em;
+  color: var(--tx-primary);
+}
+
+
+/* ═══════════════════════════════
+   CARD & COMPONENT TYPOGRAPHY
+═══════════════════════════════ */
+
+/* About card */
+.about-card h4 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+.about-card p,
+.info-row {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+.info-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* Timeline */
+.tl-card .role {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+.tl-card .place,
+.tl-left .yr {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* Position cards */
+.pos-card h4 {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.pos-card p {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+}
+
+/* Education */
+.edu-body h4 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+}
+
+.edu-body p {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+}
+
+.edu-year-box {
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+/* Publication */
+.pub-body h4 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  line-height: var(--lh-heading);
+}
+
+.pub-body p {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+}
+
+/* PhD highlight */
+.phd-content h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: var(--lh-heading);
+}
+
+.phd-badge {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+/* Stat strip */
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+/* Badge */
+.badge {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+/* Contact cards */
+.contact-card h4 {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.contact-card p {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: rgba(255,255,255,.78);
+}
+
+
+/* ═══════════════════════════════
+   QUOTE / BLOCKQUOTE
+═══════════════════════════════ */
+
+blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.78;
+  letter-spacing: .005em;
+  color: #f0e8d8;
+}
+
+cite {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: #e4b96a;
+  font-style: normal;
+}
+
+
+/* ═══════════════════════════════
+   NAV TYPOGRAPHY
+═══════════════════════════════ */
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: clamp(.95rem, 2vw, 1.18rem);
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+
+/* ═══════════════════════════════
+   FOOTER TYPOGRAPHY
+═══════════════════════════════ */
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+
+.footer-details {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-body);
+}
+
+
+/* ═══════════════════════════════
+   GALLERY CAPTION
+═══════════════════════════════ */
+
+.gallery-caption,
+.gallery-overlay-text {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+
+
+/* ═══════════════════════════════
+   MOBILE TYPOGRAPHY ADJUSTMENTS
+═══════════════════════════════ */
+
+@media (max-width: 768px) {
+  body {
+    font-size: .95rem;
+    line-height: 1.75;
+  }
+
+  .hero-name   { letter-spacing: -.02em; }
+  .hero-desc   { font-size: .92rem; line-height: 1.8; }
+  .hero-title  { font-size: .72rem; letter-spacing: .12em; }
+
+  blockquote   { font-size: 1.08rem; }
+
+  .nav-links a { font-size: .9rem; letter-spacing: .1em; }
+}
