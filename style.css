@@ -135,3 +135,137 @@
         justify-content:center;
     }
 }
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE — CAREER TIMELINE
+   (max-width: 768px)
+═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* পুরো timeline container */
+  .timeline-v2 {
+    padding-left: 0;
+  }
+
+  /* প্রতিটি row — 3-column grid থেকে সরলীকৃত layout */
+  .timeline-v2 .tl-row {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 28px;       /* বাম দিকে line ও dot-এর জায়গা */
+    margin-bottom: 24px;
+    grid-template-columns: unset; /* আগের grid override */
+  }
+
+  /* বাম দিকের vertical line — pseudo element দিয়ে */
+  .timeline-v2 .tl-row::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 14px;
+    bottom: -24px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--border));
+  }
+
+  /* শেষ row-এ line থাকবে না */
+  .timeline-v2 .tl-row:last-child::before {
+    display: none;
+  }
+
+  /* dot — pseudo element */
+  .timeline-v2 .tl-row::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 2.5px solid var(--gold);
+    z-index: 1;
+  }
+
+  /* active dot (current position) */
+  .timeline-v2 .tl-row:first-child::after,
+  .timeline-v2 .tl-row:nth-child(2)::after {
+    background: var(--gold);
+    box-shadow: 0 0 0 4px var(--gold-dim), 0 0 10px var(--gold);
+  }
+
+  /* বাম পাশের year column — লুকানো হবে না, উপরে দেখাবে */
+  .timeline-v2 .tl-left {
+    display: block;          /* লুকাবে না */
+    text-align: left;
+    padding: 0;
+    margin-bottom: 6px;
+    order: unset;
+    grid-column: unset;
+  }
+
+  /* Year badge */
+  .timeline-v2 .tl-left .yr {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    padding: 3px 12px;
+    border-radius: 50px;
+    background: rgba(201, 146, 42, .12);
+    border: 1px solid rgba(201, 146, 42, .25);
+    color: var(--gold);
+  }
+
+  /* মাঝের dot/line column — লুকানো (pseudo দিয়ে handle করা হচ্ছে) */
+  .timeline-v2 .tl-center {
+    display: none;
+  }
+
+  /* Card */
+  .timeline-v2 .tl-card {
+    grid-column: unset;
+    order: unset;
+    border-left: 3px solid var(--gold);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 0;
+    background: var(--bg-surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .timeline-v2 .tl-card .role {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .timeline-v2 .tl-card .place {
+    font-size: .84rem;
+    line-height: 1.55;
+  }
+}
+
+/* ═══════════════════════════
+   Extra small (max-width: 480px)
+═══════════════════════════ */
+
+@media (max-width: 480px) {
+  .timeline-v2 .tl-row {
+    padding-left: 24px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-v2 .tl-card {
+    padding: 12px 14px;
+  }
+
+  .timeline-v2 .tl-left .yr {
+    font-size: .68rem;
+    padding: 3px 10px;
+  }
+
+  .timeline-v2 .tl-card .role  { font-size: .96rem; }
+  .timeline-v2 .tl-card .place { font-size: .8rem; }
+}
