@@ -1,8 +1,9 @@
-name: Deploy HTML Site on push
+name: Deploy Project on push
 on:
   push:
     branches:
       - main
+
 jobs:
   web-deploy:
     name: Deploy
@@ -11,21 +12,10 @@ jobs:
       - name: Get the latest code
         uses: actions/checkout@v4
 
-      # OPTIONAL: Uncomment this section if you use npm/Vite/Webpack to build your HTML/CSS
-      # - name: Setup Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: '20'
-      # - name: Build static assets
-      #   run: |
-      #     npm install
-      #     npm run build
-
-      - name: 📂 Sync HTML files via FTP
+      - name: 📂 Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.1
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # local-dir: ./dist/ # 👈 Uncomment and change this if your HTML files sit inside a specific folder (like 'dist', 'public', or 'build')
-          server-dir: /       # 👈 This dumps the files directly into your remote root directory
+          server-dir: /
