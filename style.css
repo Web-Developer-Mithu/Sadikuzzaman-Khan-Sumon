@@ -270,19 +270,3 @@
   .timeline-v2 .tl-card .place { font-size: .8rem; }
 }
 
-/* ═══════════════════════════════
-   HERO — MOBILE NAVBAR FIX
-═══════════════════════════════ */
-
-@media (max-width: 768px) {
-  .hero {
-    padding-top: calc(var(--nav-h) + 32px);
-    min-height: 100svh; /* svh = safe viewport, notch/browser-bar সহ */
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding-top: calc(var(--nav-h) + 24px);
-  }
-}
