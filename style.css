@@ -673,3 +673,231 @@ cite {
 
   .nav-links a { font-size: .9rem; letter-spacing: .1em; }
 }
+
+/* পুরো section background */
+.about-card{
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+/* Hover effect */
+.about-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Heading */
+.about-card h4{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+  border-left: 4px solid #4f46e5;
+  padding-left: 10px;
+}
+
+/* প্রতিটি info row কে card বানানো */
+.info-row{
+  background: #f8f9fb;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+/* hover effect on row */
+.info-row:hover{
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  transform: scale(1.01);
+}
+
+/* label styling */
+.info-label{
+  font-weight: 600;
+  color: #4f46e5;
+  min-width: 140px;
+}
+
+/* text styling */
+.info-row{
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* hr style */
+.about-card hr{
+  border: none;
+  border-top: 1px dashed #ddd;
+  margin: 15px 0;
+}
+
+/* responsive */
+@media (max-width: 600px){
+  .info-label{
+    min-width: 100%;
+  }
+
+  .info-row{
+    flex-direction: column;
+  }
+}
+body{
+  background: linear-gradient(120deg, #f0f2f5, #ffffff);
+}
+
+:root{
+  /* LIGHT */
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #374151;
+  --border: #e5e7eb;
+  --accent: #4f46e5;
+  --row: #f3f4f6;
+  --row-hover: #e0e7ff;
+}
+
+/* DARK */
+body.dark{
+  --bg: #0b1220;
+  --card: #111827;
+  --text: #f9fafb;   /* 👈 HIGH CONTRAST TEXT */
+  --muted: #e5e7eb;  /* 👈 FIXED (no blur gray) */
+  --border: #243244;
+  --accent: #818cf8;
+  --row: #1f2937;
+  --row-hover: #273449;
+}
+
+/* BODY */
+body{
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* CARD */
+.about-card{
+  background: var(--card);
+  color: var(--text);   /* 👈 VERY IMPORTANT */
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+.about-card h4{
+  color: var(--text);   /* FIXED */
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+}
+
+/* ROW */
+.info-row{
+  background: var(--row);
+  color: var(--text);   /* 👈 MAIN FIX */
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: 0.2s ease;
+}
+
+/* HOVER */
+.info-row:hover{
+  background: var(--row-hover);
+}
+
+/* LABEL */
+.info-label{
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 140px;
+}
+
+/* REMOVE ANY BLUR EFFECT (important) */
+.info-row, .about-card, body{
+  filter: none !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .info-label{
+    min-width: 100%;
+  }
+  .info-row{
+    flex-direction: column;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   DARK MODE FIX — style.css
+   সমস্যা: style.css-এ body.dark ব্যবহার, কিন্তু
+   index.html-এ [data-theme="dark"] — সব এখানে ঠিক করা হয়েছে
+═══════════════════════════════════════════════════════ */
+
+/* ── 1. about-card: dark mode-এ hardcoded white background fix ── */
+[data-theme="dark"] .about-card {
+  background: var(--bg-surface);       /* #111d2e */
+  color: var(--tx-primary);            /* #f0e8d8 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ── 2. about-card h4: hardcoded #222 fix ── */
+[data-theme="dark"] .about-card h4 {
+  color: var(--tx-primary);            /* #f0e8d8 */
+  border-left-color: var(--accent, #818cf8);
+}
+
+/* ── 3. info-row: hardcoded #f8f9fb background ও #333 text fix ── */
+[data-theme="dark"] .info-row {
+  background: #1a2740;
+  color: var(--tx-primary);            /* #f0e8d8 */
+  border-color: var(--border);
+}
+
+/* ── 4. info-row hover: dark mode ── */
+[data-theme="dark"] .info-row:hover {
+  background: #243550;
+}
+
+/* ── 5. info-label: dark mode accent color ── */
+[data-theme="dark"] .info-label {
+  color: var(--gold, #c9922a);
+}
+
+/* ── 6. about-card hr: hardcoded #ddd fix ── */
+[data-theme="dark"] .about-card hr {
+  border-top-color: var(--border);     /* #243244 */
+}
+
+/* ── 7. body background: hardcoded gradient fix ── */
+[data-theme="dark"] body {
+  background: var(--bg-base, #0b1220);
+}
+
+/* ── 8. body.dark সরিয়ে [data-theme="dark"] দিয়ে replace ──
+   (নিচের পুরানো block কে override করে)              */
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --card: #111827;
+  --text: #f9fafb;
+  --muted: #e5e7eb;
+  --border: #243244;
+  --accent: #818cf8;
+  --row: #1f2937;
+  --row-hover: #273449;
+}

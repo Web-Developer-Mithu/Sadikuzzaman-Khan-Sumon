@@ -1196,26 +1196,142 @@ nav {
   </div>
 
   <!-- ABOUT -->
-  <section class="section" id="about" aria-labelledby="about-title">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">Introduction</span>
-      <h2 class="section-title" id="about-title">About Me</h2>
+<div class="about-card reveal" style="transition-delay:.12s">
+  <h4>Personal Information</h4>
+
+  <div class="info-row">
+    <span class="info-label">Father:</span>
+    Md. Mafiuzzaman Khan (Freedom Fighter), Former Assistant Engineer, BADC (Retired)
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Mother:</span>
+    Mst. Shukrun Nesa (Housewife)
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Born:</span>
+    November 27, 1977, Kushtia, Bangladesh
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Nationality:</span>
+    Bangladeshi by Birth
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Religion:</span>
+    Islam
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Holy Pilgrimage:</span>
+    Performed Holy Hajj in 2016
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Height:</span>
+    5' 6"
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Permanent Address:</span>
+    Village: Daulatpur, Post: Rifayetpur, Upazila: Daulatpur, District: Kushtia
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Present Address:</span>
+    Village: Daulatpur, Post: Rifayetpur, Upazila: Daulatpur, District: Kushtia
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Marital Status:</span>
+    Married
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Late Wife:</span>
+    Wahida Selina (Assistant Headmaster, Daulatpur Govt. Pilot Model Secondary School)
+    <br>
+    Date of Birth: September 27, 1980 |
+    Date of Demise: May 25, 2018
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Present Spouse:</span>
+    Mst. Asmaul Husna Smrete
+    <br>
+    Date of Birth: April 21, 1997 |
+    Education: M.A (Bangla)
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Children:</span>
+    Sneha Khan (HSC Candidate, Holy Cross College, Dhaka)
+    <br>
+    Siza Khan (Class 10, Dhaka Cantonment Girls' Public School & College)
+  </div>
+
+  <div class="info-row">
+    <span class="info-label">Service:</span>
+    23 Years
+  </div>
+  <div class="about-card reveal" style="transition-delay:.18s">
+    <h4>Family Details</h4>
+  
+    <div class="info-row">
+      <span class="info-label">Elder Sister:</span>
+      Mst. Zakia Khanom
     </div>
-    <div class="about-grid">
-      <div class="about-card reveal">
-        <h4>Professional Profile</h4>
-        <p>Md. Sadikuzzaman is a seasoned educationalist from Kushtia, Bangladesh with over two decades of leadership in academic institutions. As the Principal of Daulatpur College since 2017, he has been a transformative force in shaping educational standards in the region. His dedication to institutional governance extends across multiple schools, colleges, and national-level academic bodies.</p>
-      </div>
-      <div class="about-card reveal" style="transition-delay:.12s">
-        <h4>Personal Information</h4>
-        <div class="info-row"><span class="info-label">Born:</span> November 27, 1977, Kushtia, Bangladesh</div>
-        <div class="info-row"><span class="info-label">Nationality:</span> Bangladeshi</div>
-        <div class="info-row"><span class="info-label">Religion:</span> Islam (Performed Holy Hajj, 2016)</div>
-        <div class="info-row"><span class="info-label">Children:</span> Sneha Khan (HSC &ndash; Holy Cross College, Dhaka) &amp; Siza Khan (Class 10 &ndash; Dhaka Cantonment Girls&apos; School)</div>
-        <div class="info-row"><span class="info-label">Service:</span> 23 Years</div>
-      </div>
+  
+    <div class="info-row">
+      <span class="info-label">Education:</span>
+      B.A. (Honors), M.A. in Islamic History,
+      Islamic University, Kushtia
     </div>
-  </section>
+  
+    <div class="info-row">
+      <span class="info-label">Occupation:</span>
+      Housewife
+    </div>
+  
+    <hr>
+  
+    <div class="info-row">
+      <span class="info-label">Brother-in-Law:</span>
+      Md. Azom Ali
+    </div>
+  
+    <div class="info-row">
+      <span class="info-label">Education:</span>
+      B.Sc. Engineer (Civil)
+    </div>
+  
+    <div class="info-row">
+      <span class="info-label">Profession:</span>
+      Chief Engineer, Rangpur City Corporation
+    </div>
+  
+    <hr>
+  
+    <div class="info-row">
+      <span class="info-label">Younger Brother:</span>
+      Md. Rakibuzzaman
+    </div>
+  
+    <div class="info-row">
+      <span class="info-label">Education:</span>
+      B.Sc. (Honors), M.Sc. in Fisheries,
+      University of Dhaka
+    </div>
+  
+    <div class="info-row">
+      <span class="info-label">Profession:</span>
+      Deputy Director,
+      Department of Narcotics Control, Dinajpur
+    </div>
+  </div>
+</div>
 
 </div>
 
@@ -1532,6 +1648,9 @@ nav {
     });
   }, { threshold:.5 });
   counters.forEach(c => cntIO.observe(c));
+  function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
 </script>
 </body>
 </html>
