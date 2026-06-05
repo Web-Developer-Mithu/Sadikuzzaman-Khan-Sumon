@@ -901,3 +901,103 @@ body{
   --row: #1f2937;
   --row-hover: #273449;
 }
+
+
+/* New Navigation Bar */
+/* ═══════════════════════════════════════════
+   MOBILE MENU ULTRA FIX (Compact Layout)
+   গ্যাপ, মার্জিন এবং ফন্ট সাইজ কমিয়ে ফিক্স করা হয়েছে
+═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  
+  /* পুরো নেভিগেশন বারকে রেস্পনসিভ ব্লকে রূপান্তর */
+  nav {
+    position: relative !important;
+    height: auto !important;
+    backdrop-filter: none !important;
+    background: var(--glass-bg) !important;
+  }
+
+  /* লোগো এবং হ্যামবার্গার বাটনের এরিয়া */
+  .nav-inner {
+    height: 60px !important; /* 🌟 হাইলাইট ১: নব-বারের উচ্চতা ৭২px থেকে কমিয়ে ৬০px করা হয়েছে */
+  }
+
+  /* হ্যামবার্গার বাটন */
+  .nav-toggle {
+    display: flex !important;
+  }
+
+  /* মোবাইল মেনু লিঙ্ক কন্টেইনার */
+  .nav-links {
+    display: none !important;
+    flex-direction: column !important;
+    width: 100%;
+    
+    /* 🌟 হাইলাইট ২: প্যাডিং ও গ্যাপ অনেক কমানো হয়েছে যাতে মার্জিন বেশি না লাগে */
+    gap: 0 !important; /* মেনুর ভেতরের অপ্রয়োজনীয় গ্যাপ সম্পূর্ণ জিরো */
+    padding: 0 20px 12px 20px !important; /* টপ-বটম এবং ডানে-বামের প্যাডিং কমানো হয়েছে */
+    
+    background: var(--glass-bg);
+    border-top: 1px solid var(--border);
+    transition: all 0.3s var(--ease);
+  }
+
+  /* জাভাস্ক্রিপ্ট একটিভ হলে মেনু যেভাবে নিচে নামবে */
+  .nav-toggle.open ~ .nav-links,
+  .nav-links.open,
+  .nav-links.active {
+    display: flex !important;
+    animation: slideDownMenu 0.35s var(--ease) forwards;
+  }
+
+  /* 🌟 হাইলাইট ৩: মোবাইল মেনুর ভেতরের লিঙ্কের সাইজ ও প্যাডিং ফিক্স */
+  .nav-links a {
+    width: 100%;
+    display: block;
+    
+    /* ফন্ট সাইজ এবং স্পেসিং কমানো */
+    font-size: 0.78rem !important; /* ফন্ট সাইজ ছোট করা হয়েছে যাতে মোবাইলে বড় না দেখায় */
+    font-family: var(--ff-sans) !important; /* রিডিং সহজ করার জন্য */
+    letter-spacing: .04em !important;
+    
+    /* প্যাডিং কমানো */
+    padding: 10px 0 !important; /* ১৪px থেকে কমিয়ে ১০px করা হয়েছে যাতে লম্বাটে মার্জিন না লাগে */
+    
+    border-bottom: 1px solid rgba(130, 130, 130, 0.08);
+    color: var(--tx-secondary) !important;
+  }
+
+  /* শেষ লিঙ্কের নিচের বর্ডার রিমুভ */
+  .nav-links a:last-child {
+    border-bottom: none !important;
+  }
+
+  /* হোভার বা একটিভ স্টেট */
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--gold) !important;
+    padding-left: 4px !important; /* ডানে সরার পরিমাণ কমানো হয়েছে */
+    transition: all 0.2s ease;
+  }
+
+  .nav-links a::after {
+    display: none !important;
+  }
+
+  .nav-right {
+    gap: 15px !important; /* টগল আইকন ও হ্যামবার্গারের মাঝের গ্যাপ কমানো */
+  }
+
+  /* হিরো সেকশনের টপ স্পেস অ্যাডজাস্টমেন্ট */
+  .hero {
+    padding-top: 20px !important; /* মেনুর সাথে হিরো সেকশনের গ্যাপ সামঞ্জস্যপূর্ণ করা */
+  }
+
+  /* স্মুথ অ্যানিমেশন */
+  @keyframes slideDownMenu {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
